@@ -7,8 +7,65 @@ def queen(square):
   return:
   list of possible squares that the queen can move to:
   """
+  verticalb = vertical = square[1]
+  horizontalb = horizontal = square[0]
+  myList = []
+
+  #vertical above number 
+  while vertical != 8 :
+    vertical = int(vertical )+ 1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
+ 
+
+  #vertical under number 
+  while vertical != 1 :
+    vertical = int(vertical )- 1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
   
-  return None
+  #horizontal above letter
+
+
+  while horizontal != "h":
+    horizontal  = chr(ord(horizontal )+1)
+    myList.append(str(horizontal)+str(vertical))
+  horizontal = horizontalb
+  #horizontal under letter
+  while horizontal != "a":
+    horizontal  = chr(ord(horizontal )-1)
+    myList.append(str(horizontal)+str(vertical))
+  horizontal = horizontalb
+
+  while vertical != 8 and horizontal != "a":
+    horizontal  = chr(ord(horizontal )-1)
+    vertical = int(vertical )+1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
+  horizontal = horizontalb
+
+  while vertical != 8 and horizontal != "h":
+    horizontal  = chr(ord(horizontal )+1)
+    vertical = int(vertical )+1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
+  horizontal = horizontalb
+
+  while vertical != 1 and horizontal != "a":
+    horizontal  = chr(ord(horizontal )-1)
+    vertical = int(vertical )-1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
+  horizontal = horizontalb
+
+  while vertical != 1 and horizontal != "h":
+    horizontal  = chr(ord(horizontal )+1)
+    vertical = int(vertical )-1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
+  horizontal = horizontalb
+
+  return myList
 
 
 def main():
