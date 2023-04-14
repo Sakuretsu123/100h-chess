@@ -1,4 +1,5 @@
 #!python3
+#another day, another slay
 
 def bishop(square):
   """
