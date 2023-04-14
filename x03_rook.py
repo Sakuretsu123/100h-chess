@@ -9,8 +9,48 @@ def rook(square):
   return:
   list of possible squares that the rook can move to:
   """
+  #a b c d e f g h 
+  # 8
+  # 7
+  # 6 
+  # 5 
+  # 4 
+  # 3 
+  # 2 
+  # 1 
+
+  verticalb = vertical = square[1]
+  horizontalb = horizontal = square[0]
+  myList = []
+
+  #vertical above number 
+  while vertical != 8 :
+    vertical = int(vertical )+ 1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
+ 
+
+  #vertical under number 
+  while vertical != 1 :
+    vertical = int(vertical )- 1
+    myList.append(str(horizontal)+str(vertical))
+  vertical = verticalb
   
-  return None
+  #horizontal above letter
+
+
+  while horizontal != "h":
+    horizontal  = chr(ord(horizontal )+1)
+    myList.append(str(horizontal)+str(vertical))
+  horizontal = horizontalb
+  #horizontal under letter
+  while horizontal != "a":
+    horizontal  = chr(ord(horizontal )-1)
+    myList.append(str(horizontal)+str(vertical))
+  horizontal = horizontalb
+
+  
+  return myList
 
 
 def main():
